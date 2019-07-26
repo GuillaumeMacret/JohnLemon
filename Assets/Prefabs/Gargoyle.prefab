@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7508005397773582350}
   - component: {fileID: 7508005397783146478}
+  - component: {fileID: 7485971188639246050}
   m_Layer: 0
   m_Name: Gargoyle
   m_TagString: Untagged
@@ -29,6 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7508005397773582730}
+  - {fileID: 3195821967294497650}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -42,7 +44,7 @@ Animator:
   m_GameObject: {fileID: 7508005397773753390}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: d3312d02a690eda48bd6807bf5c78084, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7f209150ac813164cb7f83e33d169f03, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -51,6 +53,20 @@ Animator:
   m_HasTransformHierarchy: 0
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &7485971188639246050
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7508005397773753390}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!1 &7508005397773753770
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,3 +148,78 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.47926563, y: 0.99965894, z: 0.50778025}
     m_Extent: {x: 1.3090248, y: 0.9985337, z: 1.1511977}
   m_DirtyAABB: 0
+--- !u!1001 &6938612194839628841
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7508005397773582350}
+    m_Modifications:
+    - target: {fileID: 5546826004194556225, guid: 3d26b946d3f083d4692c5aad7312a674,
+        type: 3}
+      propertyPath: m_Name
+      value: PointOfView
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481778097355657051, guid: 3d26b946d3f083d4692c5aad7312a674,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481778097355657051, guid: 3d26b946d3f083d4692c5aad7312a674,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481778097355657051, guid: 3d26b946d3f083d4692c5aad7312a674,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481778097355657051, guid: 3d26b946d3f083d4692c5aad7312a674,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.17364816
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481778097355657051, guid: 3d26b946d3f083d4692c5aad7312a674,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481778097355657051, guid: 3d26b946d3f083d4692c5aad7312a674,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481778097355657051, guid: 3d26b946d3f083d4692c5aad7312a674,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9848078
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481778097355657051, guid: 3d26b946d3f083d4692c5aad7312a674,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481778097355657051, guid: 3d26b946d3f083d4692c5aad7312a674,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481778097355657051, guid: 3d26b946d3f083d4692c5aad7312a674,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481778097355657051, guid: 3d26b946d3f083d4692c5aad7312a674,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3d26b946d3f083d4692c5aad7312a674, type: 3}
+--- !u!4 &3195821967294497650 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5481778097355657051, guid: 3d26b946d3f083d4692c5aad7312a674,
+    type: 3}
+  m_PrefabInstance: {fileID: 6938612194839628841}
+  m_PrefabAsset: {fileID: 0}

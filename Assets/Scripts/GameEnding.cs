@@ -1,13 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameEnding : MonoBehaviour
 {
     public float fadeDuration = 1f;
     public GameObject player;
     public CanvasGroup exitBackgroundImageCanvasGroup;
+    public CanvasGroup caughtBackgroundImageCanvasGroup;
     public float displayImageDuration = 1f;
+
+    public AudioSource exitAudio;
+    public AudioSource caughtAudio;
+    bool m_HasAudioPlayed;
+
+    bool m_IsPlayerCaught;
     float m_Timer;
     bool m_IsPlayerAtExit;
 
@@ -19,21 +27,39 @@ public class GameEnding : MonoBehaviour
         }
     }
 
+    public void CaughtPlayer()
+    {
+        m_IsPlayerCaught = true;
+    }
+
     private void Update()
     {
         if (m_IsPlayerAtExit)
         {
-            EndLevel();
+            EndLevel(exitBackgroundImageCanvasGroup,false, exitAudio);
+        }else if (m_IsPlayerCaught)
+        {
+            EndLevel(caughtBackgroundImageCanvasGroup,true, caughtAudio);
         }
     }
 
-    void EndLevel()
+    void EndLevel(CanvasGroup imageCanvasGroup, bool doRestart, AudioSource audio)
     {
+        if (!m_HasAudioPlayed)
+        {
+            audio.Play();
+            m_HasAudioPlayed = true;
+        }
         m_Timer += Time.deltaTime;
-        exitBackgroundImageCanvasGroup.alpha = m_Timer / fadeDuration;
+        imageCanvasGroup.alpha = m_Timer / fadeDuration;
         if (m_Timer > fadeDuration + displayImageDuration)
         {
-            Application.Quit();
+            if (doRestart)
+            {
+                SceneManager.LoadScene(0);
+            }
+            else
+                Application.Quit();
         }
     }
 }
